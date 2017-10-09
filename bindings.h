@@ -102,6 +102,7 @@ int lua_window_pid(lua_State * L);
 int lua_window_role(lua_State * L);
 int lua_window_title(lua_State * L);
 int lua_window_type(lua_State * L);
+int lua_window_type_dock(lua_State * L);
 int lua_workspace(lua_State * L);
 int lua_workspaces(lua_State * L);
 int lua_xy(lua_State * L);

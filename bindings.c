@@ -146,6 +146,7 @@ void init_lua(int _debug, const char *config_file)
     lua_register(g_L, "window_role", lua_window_role);
     lua_register(g_L, "window_title", lua_window_title);
     lua_register(g_L, "window_type", lua_window_type);
+    lua_register(g_L, "window_type_dock", lua_window_type_dock);
     lua_register(g_L, "workspace", lua_workspace);
     lua_register(g_L, "workspaces", lua_workspaces);
     lua_register(g_L, "xy", lua_xy);
@@ -851,6 +852,12 @@ int lua_window_type(lua_State * L)
         g_warning("Unknown window-type");
         return 0;
     };
+    return 1;
+}
+
+int lua_window_type_dock(lua_State * L) {
+
+    wnck_window_set_window_type (g_window, WNCK_WINDOW_DOCK);
     return 1;
 }
 
